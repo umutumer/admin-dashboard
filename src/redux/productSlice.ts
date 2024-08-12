@@ -8,18 +8,24 @@ export const fetchProducts = createAsyncThunk('/products',
         return(await response.json())
     },
 );
-export const updateProduct = createAsyncThunk('/product/update',
-    async(updatedProduct:Product) =>{
-        const response = await fetch(`http://localhost:8080/products/${updatedProduct.id}`,{
-            method:'PUT',
-            headers:{
-                'Content-Type':'applications/json'
+export const updateProduct = createAsyncThunk(
+    '/product/update',
+    async (updatedProduct: Product) => {
+        const response = await fetch(`http://localhost:8080/products/${updatedProduct.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify(updatedProduct)
+            body: JSON.stringify(updatedProduct)
         });
-        return response.json();
+
+        const data = await response.json();
+        console.log(data);
+        
+        return updatedProduct; 
     }
 );
+
     
 export const addProduct = createAsyncThunk('/product/add',
     async(newProduct:Omit<Product,'id'>) =>{
@@ -72,12 +78,12 @@ const productSlice = createSlice({
             state.loading ='failed';
             state.error = action.error.message || "Something went wrong";
         })
-        .addCase(updateProduct.fulfilled,(state,action: PayloadAction<Product>) =>{
-            const index = state.entities.findIndex(product => product.id === action.payload.id)
+        .addCase(updateProduct.fulfilled, (state, action: PayloadAction<Product>) => {
+            const index = state.entities.findIndex(product => product.id === action.payload.id);
             if (index !== -1) {
-                state.entities[index] =action.payload;
+                state.entities[index] = action.payload;
             }
-        })
+        })    
         .addCase(addProduct.fulfilled,(state,action:PayloadAction<Product>) =>{
             state.entities.push(action.payload)
         })
