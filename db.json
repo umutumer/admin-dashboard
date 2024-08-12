@@ -21,5 +21,159 @@
       "price": 5250,
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "umutumer",
+      "mail": "utumer1@gmail.com",
+      "password": "J7p@Zl1W"
+    },
+    {
+      "id": 2,
+      "username": "johndoe",
+      "mail": "johndoe2@gmail.com",
+      "password": "Q9s!Kf3X"
+    },
+    {
+      "id": 3,
+      "username": "janedoe",
+      "mail": "janedoe3@gmail.com",
+      "password": "R6v@Lp2T"
+    },
+    {
+      "id": 4,
+      "username": "alexsmith",
+      "mail": "alexsmith4@gmail.com",
+      "password": "H4r#Nf5Y"
+    },
+    {
+      "id": 5,
+      "username": "emilyjohnson",
+      "mail": "emilyjohnson5@gmail.com",
+      "password": "S8t$Gq4M"
+    },
+    {
+      "id": 6,
+      "username": "michaelbrown",
+      "mail": "michaelbrown6@gmail.com",
+      "password": "B2w@Cz7F"
+    },
+    {
+      "id": 7,
+      "username": "sarahwilson",
+      "mail": "sarahwilson7@gmail.com",
+      "password": "L5v#Xd3J"
+    },
+    {
+      "id": 8,
+      "username": "davidlee",
+      "mail": "davidlee8@gmail.com",
+      "password": "N3k!Wq6R"
+    },
+    {
+      "id": 9,
+      "username": "lauraadams",
+      "mail": "lauraadams9@gmail.com",
+      "password": "T7r@Pj2K"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 2,
+      "status": "your order has been received"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "productId": 2,
+      "status": "your order has been processed"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "productId": 2,
+      "status": "your order has been shipped"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "productId": 2,
+      "status": "your order has been delivered"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "productId": 2,
+      "status": "your order has been received"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "productId": 2,
+      "status": "your order has been processed"
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "productId": 2,
+      "status": "your order has been shipped"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "productId": 2,
+      "status": "your order has been delivered"
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "productId": 2,
+      "status": "your order has been received"
+    },
+    {
+      "id": 10,
+      "userId": 3,
+      "productId": 2,
+      "status": "your order has been processed"
+    },
+    {
+      "id": 11,
+      "userId": 3,
+      "productId": 2,
+      "status": "your order has been shipped"
+    },
+    {
+      "id": 12,
+      "userId": 3,
+      "productId": 2,
+      "status": "your order has been delivered"
+    },
+    {
+      "id": 13,
+      "userId": 4,
+      "productId": 2,
+      "status": "your order has been received"
+    },
+    {
+      "id": 14,
+      "userId": 4,
+      "productId": 2,
+      "status": "your order has been processed"
+    },
+    {
+      "id": 15,
+      "userId": 4,
+      "productId": 2,
+      "status": "your order has been shipped"
+    },
+    {
+      "id": 16,
+      "userId": 4,
+      "productId": 2,
+      "status": "your order has been delivered"
+    }
   ]
 }

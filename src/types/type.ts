@@ -5,3 +5,15 @@ export interface Product{
     explanation:string,
     price:number
 }
+export interface User{
+    id: number,
+    username: string,
+    mail: string,
+    password: string
+}
+export interface Order{
+    id: number,
+    userId: number,
+    productId: number,
+    status: string
+}
