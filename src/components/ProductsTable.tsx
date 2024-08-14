@@ -105,7 +105,10 @@ const ProductsTable = () => {
     }, [dispatch])
     return (
         <div className="overflow-x-auto relative w-full">
-            <h3 className='text-center text-3xl text-blue-600 font-semibold my-10'>PRODUCTS</h3>
+            <div className='relative flex items-center justify-center'>
+            <h3 className='text-5xl text-blue-600 font-semibold my-10'>PRODUCTS</h3>
+            <h3 className='text-5xl text-blue-600 font-semibold  absolute top-11 opacity-40'>PRODUCTS</h3>
+            </div>
             <button className='absolute top-25 right-5 px-2 py-1 bg-blue-600 text-white rounded' onClick={addProductBtn}>Add Product</button>
             <table className="table mt-20">
                 <thead>

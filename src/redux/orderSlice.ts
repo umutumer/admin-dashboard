@@ -12,10 +12,10 @@ export const fetchOrders = createAsyncThunk('fetchOrders',
 
 export const updateOrderStatus = createAsyncThunk('order/statusUpdate',
     async(updatedOrder:Order) =>{
-        const response = await fetch(`http://localhost:8080/orders${updatedOrder.id}`,{
+        const response = await fetch(`http://localhost:8080/orders/${updatedOrder.id}`,{
             method:'PUT',
             headers:{
-                'Content-Type':'pplication/json'
+                'Content-Type':'application/json'
             },
             body:JSON.stringify(updatedOrder)
         })
@@ -23,6 +23,22 @@ export const updateOrderStatus = createAsyncThunk('order/statusUpdate',
         console.log(data);
         
         return updatedOrder;
+    }
+);
+export const newOrder = createAsyncThunk('order/newOrder',
+    async(newOrder:Order) =>{
+        const response = await fetch('http://localhost:8080/orders',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(newOrder)
+        })
+        const data = await response.json();
+        console.log(data);
+
+        return newOrder;
+        
     }
 )
 
@@ -60,6 +76,9 @@ const orderSlice = createSlice({
             if (index !== -1) {
                 state.entities[index] = action.payload;
             }
+        })
+        .addCase(newOrder.fulfilled,(state,action:PayloadAction<Order>) =>{
+            state.entities.push(action.payload)
         })
     },
 })

@@ -13,7 +13,7 @@ export interface User{
 }
 export interface Order{
     id: number,
-    userId: number,
-    productId: number,
+    username: string,
+    productName: string,
     status: string
 }

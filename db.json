@@ -26,7 +26,7 @@
     {
       "id": 1,
       "username": "umutumer",
-      "mail": "utumer1@gmail.com",
+      "mail": "utumer6@gmail.com",
       "password": "J7p@Zl1W"
     },
     {
@@ -81,98 +81,98 @@
   "orders": [
     {
       "id": 1,
-      "userId": 1,
-      "productId": 2,
-      "status": "your order has been received"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "productId": 2,
+      "username": "umutumer",
+      "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
       "status": "your order has been processed"
     },
     {
-      "id": 3,
-      "userId": 1,
-      "productId": 2,
-      "status": "your order has been shipped"
+      "id": 2,
+      "username": "johndoe",
+      "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
+      "status": "your order has been received"
     },
     {
-      "id": 4,
-      "userId": 1,
-      "productId": 2,
+      "id": 3,
+      "username": "johndoe",
+      "productName": "iPhone 15",
       "status": "your order has been delivered"
     },
     {
+      "id": 4,
+      "username": "alexsmith",
+      "productName": "iPhone 15",
+      "status": "your order has been shipped"
+    },
+    {
       "id": 5,
-      "userId": 2,
-      "productId": 2,
+      "username": "alexsmith",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been received"
     },
     {
       "id": 6,
-      "userId": 2,
-      "productId": 2,
+      "username": "johndoe",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been processed"
     },
     {
       "id": 7,
-      "userId": 2,
-      "productId": 2,
+      "username": "emilyjohnson",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been shipped"
     },
     {
       "id": 8,
-      "userId": 2,
-      "productId": 2,
+      "username": "emilyjohnson",
+      "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
       "status": "your order has been delivered"
     },
     {
       "id": 9,
-      "userId": 3,
-      "productId": 2,
+      "username": "alexsmith",
+      "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
       "status": "your order has been received"
     },
     {
       "id": 10,
-      "userId": 3,
-      "productId": 2,
+      "username": "davidlee",
+      "productName": "iPhone 15",
       "status": "your order has been processed"
     },
     {
       "id": 11,
-      "userId": 3,
-      "productId": 2,
+      "username": "sarahwilson",
+      "productName": "iPhone 15",
       "status": "your order has been shipped"
     },
     {
       "id": 12,
-      "userId": 3,
-      "productId": 2,
+      "username": "lauraadams",
+      "productName": "iPhone 15",
       "status": "your order has been delivered"
     },
     {
       "id": 13,
-      "userId": 4,
-      "productId": 2,
+      "username": "davidlee",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been received"
     },
     {
       "id": 14,
-      "userId": 4,
-      "productId": 2,
+      "username": "sarahwilson",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been processed"
     },
     {
       "id": 15,
-      "userId": 4,
-      "productId": 2,
+      "username": "lauraadams",
+      "productName": "Steelseries Arctis 7+ Kablosuz 7.1 Kulak Üstü Oyuncu Kulaklığı",
       "status": "your order has been shipped"
     },
     {
       "id": 16,
-      "userId": 4,
-      "productId": 2,
+      "username": "davidlee",
+      "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
       "status": "your order has been delivered"
     }
   ]

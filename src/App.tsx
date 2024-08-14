@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import DashboardHome from './pages/DashboardHome';
 import DashboarProducts from './pages/DashboarProducts';
 import DashboardUser from './pages/DashboardUser';
+import DashboardOrders from './pages/DashboardOrders';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/dashboard/home' element={<DashboardHome />} />
       <Route path='/dashboard/products' element={<DashboarProducts />} />
       <Route path='/dashboard/users' element={<DashboardUser />} />
+      <Route path='/dashboard/orders' element={<DashboardOrders />} />
     </Routes>
     </BrowserRouter>
   );

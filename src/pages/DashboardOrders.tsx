@@ -1,14 +1,14 @@
 import React from 'react'
 import DashboardSideBar from '../components/DashboardSideBar'
-import HomeContainer from '../components/HomeContainer'
+import OrdersTable from '../components/OrdersTable'
 
-const DashboardHome = () => {
+const DashboardOrders = () => {
   return (
     <div className='bg-gray-100 flex'>
         <DashboardSideBar />
-        <HomeContainer />
+        <OrdersTable />
     </div>
   )
 }
 
-export default DashboardHome
+export default DashboardOrders

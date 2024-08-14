@@ -29,7 +29,10 @@ const UsersTable = () => {
     }, [dispatch])
   return (
     <div className="overflow-x-auto relative w-full">
-            <h3 className='text-center text-3xl text-blue-600 font-semibold my-10'>USERS</h3>
+           <div className='relative flex items-center justify-center'>
+            <h3 className='text-5xl text-blue-600 font-semibold my-10'>USERS</h3>
+            <h3 className='text-5xl text-blue-600 font-semibold  absolute top-11 opacity-40'>USERS</h3>
+            </div>
             <table className="table mt-20">
                 <thead>
                     <tr className='text-blue-600 bg-gray-200'>
@@ -42,7 +45,7 @@ const UsersTable = () => {
                     {users && users.map((user: User, index) => (
                         <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-200'}>
                             <td className='py-2 px-4'>{user.username}</td>
-                            <td className='py-2 px-4'>{user.mail}₺</td>
+                            <td className='py-2 px-4'>{user.mail}</td>
                             <td className='py-2 px-4'>
                                 <button className='text-red-600 text-lg' onClick={()=>deleteUserBtn(user.id)}><FaTrash /></button>
                             </td>
