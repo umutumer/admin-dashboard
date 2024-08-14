@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 const DashboardSideBar = () => {
     return (
         <div className='w-52 min-h-screen bg-white'>
-            <Link to={'/dashboard/home'}>
+            <Link to={'/dashboard/home'} className='relative'>
             <h3 className='w-52 text-3xl font-semibold text-center my-20 text-blue-600'>DASHBOARD</h3>
+            <h3 className='w-52 text-3xl font-semibold text-center text-blue-600 absolute top-1 opacity-40'>DASHBOARD</h3>
             </Link>
             <div className='w-full flex flex-col items-center'>
                 <Link to={'/dashboard/products'} className='w-[90%] py-1 px-2 text-center text-white bg-blue-600 rounded mx-2 my-1 hover:bg-blue-700 hover:shadow-md hover:shadow-blue-500 duration-300'>Products</Link>

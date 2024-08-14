@@ -5,10 +5,11 @@ import { AppDispatch, RootState } from '../redux/store';
 import { Product } from '../types/type';
 import { FaPenToSquare, FaTrash } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
-
+import './ModalAnimation.css'
 const ProductsTable = () => {
     const [modalVisibility, setModalVisibilty] = useState<boolean>(false);
-    const [deleteModaVisibility,setDeleteModalVisibility] = useState<boolean>(false);
+    const [deleteModaVisibility, setDeleteModalVisibility] = useState<boolean>(false);
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
     const [base64Image, setBase64Image] = useState<string>("");
     const [explanation, setExplanation] = useState<string>("");
@@ -31,12 +32,16 @@ const ProductsTable = () => {
         setModalVisibilty(true)
     }
     const modalCancelBtn = () => {
-        setModalVisibilty(false);
+        setIsModalVisible(false);
         setName("");
         setBase64Image("");
         setExplanation("");
         setPrice(0);
         setSelectedId(0)
+        setTimeout(() => {
+            setModalVisibilty(false);
+        }, 300);
+
     }
     const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -74,16 +79,19 @@ const ProductsTable = () => {
             })
         }
     }
-    const deleteProductBtn = (id:number) =>{
+    const deleteProductBtn = (id: number) => {
         setSelectedId(id);
         setDeleteModalVisibility(true);
     }
-    const deleteModalCancelBtn = () =>{
-        setSelectedId(0);
-        setDeleteModalVisibility(false);
+    const deleteModalCancelBtn = () => {
+        setIsModalVisible(false);
+        setTimeout(() => {
+            setDeleteModalVisibility(false);
+            setSelectedId(0);
+        }, 300);
     }
-    const deleteModalConfirmBtn = () =>{
-        dispatch(deleteProduct(selectedId)).then(()=>{
+    const deleteModalConfirmBtn = () => {
+        dispatch(deleteProduct(selectedId)).then(() => {
             fetchProducts();
             setDeleteModalVisibility(false);
         })
@@ -103,13 +111,18 @@ const ProductsTable = () => {
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch])
+    useEffect(() => {
+        if (modalVisibility||deleteModaVisibility) {
+            setTimeout(() => setIsModalVisible(true));
+        }
+    }, [modalVisibility,deleteModaVisibility]);
     return (
         <div className="overflow-x-auto relative w-full">
             <div className='relative flex items-center justify-center'>
-            <h3 className='text-5xl text-blue-600 font-semibold my-10'>PRODUCTS</h3>
-            <h3 className='text-5xl text-blue-600 font-semibold  absolute top-11 opacity-40'>PRODUCTS</h3>
+                <h3 className='text-5xl text-blue-600 font-semibold my-10'>PRODUCTS</h3>
+                <h3 className='text-5xl text-blue-600 font-semibold  absolute top-11 opacity-40'>PRODUCTS</h3>
             </div>
-            <button className='absolute top-25 right-5 px-2 py-1 bg-blue-600 text-white rounded' onClick={addProductBtn}>Add Product</button>
+            <button className='absolute top-25 right-5 px-2 py-1 bg-blue-600 text-white rounded hover:shadow-lg hover:shadow-blue-400 hover:bg-blue-700 duration-300' onClick={addProductBtn}>Add Product</button>
             <table className="table mt-20">
                 <thead>
                     <tr className='text-blue-600 bg-gray-200'>
@@ -131,7 +144,7 @@ const ProductsTable = () => {
                                 : product.explanation}</td>
                             <td className='py-2 px-4 flex'>
                                 <button className='mr-4 text-blue-600 text-lg' onClick={() => updateProductBtn(product.id, product.name, product.explanation, product.price, product.base64Image)}><FaPenToSquare /></button>
-                                <button className='text-red-600 text-lg' onClick={()=>deleteProductBtn(product.id)}><FaTrash /></button>
+                                <button className='text-red-600 text-lg' onClick={() => deleteProductBtn(product.id)}><FaTrash /></button>
                             </td>
                         </tr>
                     ))}
@@ -140,7 +153,8 @@ const ProductsTable = () => {
             </table>
             {modalVisibility && (
                 <div className='fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-25 flex items-center justify-center'>
-                    <form onSubmit={formSubmit} className='flex flex-col items-center bg-white rounded gap-3 w-[400px] h-[600px] relative'>
+                    <form onSubmit={formSubmit} className={`flex flex-col items-center bg-white rounded gap-3 w-[400px] h-[600px] transform transition-transform duration-[3s] ${isModalVisible ? "scale-in" : "scale-out"
+                        }`}>
                         <button className='absolute text-2xl font-bold top-3 right-3 text-blue-600' onClick={modalCancelBtn}><MdCancel /></button>
                         <h3 className='text-2xl font-semibold my-5 text-blue-600'>{selectedId !== 0 ? 'Update Product' : 'Add Product'}</h3>
                         <label className='w-[90%] text-blue-600'>Product Name</label>
@@ -157,7 +171,8 @@ const ProductsTable = () => {
             )}
             {deleteModaVisibility && (
                 <div className='fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-25 flex items-center justify-center'>
-                    <div className='flex flex-col items-center bg-white rounded gap-3 w-[400px] h-[200px]'>
+                    <div className={`flex flex-col items-center bg-white rounded gap-3 w-[400px] h-[200px] transform transition-transform duration-[3s] ${isModalVisible ? "scale-in" : "scale-out"
+                        }`}>
                         <p className='my-10 text-xl'>Are you sure you want to delete ?</p>
                         <div className='flex justify-around w-full'>
                             <button onClick={deleteModalConfirmBtn} className='border border-blue-600 bg-blue-600 text-white w-32 py-1 px-2 rounded hover:bg-white hover:text-blue-600  duration-300'>Confirm</button>

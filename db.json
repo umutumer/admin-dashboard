@@ -70,12 +70,6 @@
       "username": "davidlee",
       "mail": "davidlee8@gmail.com",
       "password": "N3k!Wq6R"
-    },
-    {
-      "id": 9,
-      "username": "lauraadams",
-      "mail": "lauraadams9@gmail.com",
-      "password": "T7r@Pj2K"
     }
   ],
   "orders": [
@@ -83,7 +77,7 @@
       "id": 1,
       "username": "umutumer",
       "productName": "Logitech G G305 LIGHTSPEED 12.000 DPI Kablosuz Oyuncu Mouse - Siyah",
-      "status": "your order has been processed"
+      "status": "your order has been delivered"
     },
     {
       "id": 2,
